@@ -13,12 +13,13 @@ function FuncionalloadNav() {
         .catch(error => console.error('Error al cargar la navegación:', error));
 }
 
+
 // Función para cargar el navbar
 function loadNav() {
     const currentPath = window.location.pathname;
-    const { navPath } = getBasePath(currentPath);
+    const paths = getBasePath(currentPath);
     
-    fetch(navPath)
+    fetch(paths.navPath)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok.');
@@ -28,7 +29,6 @@ function loadNav() {
         .then(data => {
             document.getElementById('nav-container').innerHTML = data;
             adjustNavLinks(); // Ajustar los enlaces después de cargar el navbar
-            //setupNavLinks();
         })
         .catch(error => {
             console.error('Error loading navbar:', error);
@@ -94,18 +94,26 @@ function FUNCIONALgetNavPath() {
 
 
 // Ajustar los enlaces de navegación según la ubicación actual
-function adjustNavLinks() {
+function xxxadjustNavLinks() {
     const navLinks = document.querySelectorAll('.sidebar nav ul li a');
     const currentPath = window.location.pathname;
-    // const basePath = getBasePath(currentPath);
-    const { basePath } = getBasePath(currentPath);
+    const basePath = getBasePath(currentPath);
 
     navLinks.forEach(link => {
         link.setAttribute('href', basePath + link.getAttribute('href'));
     });
 }
 
+// Función para ajustar los enlaces de navegación según la ubicación actual
+function adjustNavLinks() {
+    const navLinks = document.querySelectorAll('.sidebar nav ul li a');
+    const currentPath = window.location.pathname;
+    const paths = getBasePath(currentPath);
 
+    navLinks.forEach(link => {
+        link.setAttribute('href', paths.basePath + link.getAttribute('href'));
+    });
+}
 
 
 // Función para obtener la ruta base correcta
