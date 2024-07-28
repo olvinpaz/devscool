@@ -14,7 +14,7 @@ function loadNav() {
         .then(data => {
             document.getElementById('top-navbar').innerHTML = data;
             adjustNavLinks(); // Ajustar los enlaces después de cargar el navbar
-            setupNavLinks();
+            //setupNavLinks();
         })
         .catch(error => {
             console.error('Error loading top-navbar:', error);
@@ -33,7 +33,7 @@ function loadNav() {
             .then(data => {
                 document.getElementById('sub-top-navbar').innerHTML = data;
                 adjustNavLinks(); // Ajustar los enlaces después de cargar la sub-navbar
-                setupNavLinks();
+                //setupNavLinks();
             })
             .catch(error => {
                 console.error('Error loading sub-top-navbar:', error);
@@ -57,7 +57,7 @@ function getRepoName() {
 
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
-function adjustNavLinks() {
+function xxxxadjustNavLinks() {
     const navLinks = document.querySelectorAll('#top-navbar nav ul li a, #sub-top-navbar nav ul li a');
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
@@ -68,12 +68,36 @@ function adjustNavLinks() {
 }
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
-function xxxxadjustNavLinks() {
+function XXXXadjustNavLinks() {
     const navLinks = document.querySelectorAll('#top-navbar nav ul li a, #sub-top-navbar nav ul li a');
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
 
     navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http://') && !href.startsWith('https://')) {
+            link.setAttribute('href', paths.basePath + href);
+        }
+    });
+}
+
+// Función para ajustar los enlaces de navegación según la ubicación actual
+function adjustNavLinks() {
+    const currentPath = window.location.pathname;
+    const paths = getBasePath(currentPath);
+
+    // Ajustar enlaces del navbar
+    const topNavLinks = document.querySelectorAll('#top-navbar nav ul li a');
+    topNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http://') && !href.startsWith('https://')) {
+            link.setAttribute('href', paths.basePath + href);
+        }
+    });
+
+    // Ajustar enlaces de la sub-navbar
+    const subNavLinks = document.querySelectorAll('#sub-top-navbar nav ul li a');
+    subNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href.startsWith('http://') && !href.startsWith('https://')) {
             link.setAttribute('href', paths.basePath + href);
@@ -95,11 +119,11 @@ function getBasePath(currentPath) {
     // Verificar si estamos en un servidor local
     if (hostname === 'localhost' || hostname === '127.0.0.1') {
         // Ajustar la ruta según la estructura de tu servidor local
-        basePath = '/';
-        navPath = 'top-navbar.html'; // Asumimos que nav.html está en la misma carpeta
-        subNavPath = 'sub-top-navbar.html'; // Asumimos que sub-top-navbar.html está en la misma carpeta
+        //basePath = '/';
+        //navPath = 'top-navbar.html'; // Asumimos que nav.html está en la misma carpeta
+        //subNavPath = 'sub-top-navbar.html'; // Asumimos que sub-top-navbar.html está en la misma carpeta
         
-        /*
+       
         // Contar la profundidad de la URL actual para construir la ruta relativa
         const depth = (currentPath.match(/\//g) || []).length - 1;
         for (let i = 0; i < depth; i++) {
@@ -107,7 +131,7 @@ function getBasePath(currentPath) {
         }
         navPath = basePath + 'top-navbar.html';
         subNavPath = basePath + 'sub-top-navbar.html';
-        */
+        /**/
    
     } else {
         // Asumimos que estamos en GitHub Pages
