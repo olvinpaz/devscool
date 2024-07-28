@@ -13,6 +13,8 @@ function loadNav() {
         .catch(error => console.error('Error al cargar la navegación:', error));
 }
 
+
+
 // Función para obtener la ruta correcta de nav.html
 function xxxgetNavPath() {
     const currentPath = window.location.pathname;
@@ -24,36 +26,50 @@ function xxxgetNavPath() {
     return navPath + 'nav.html';
 }
 
-// Función para obtener el nombre del repositorio de la URL
+
+
+// Función para obtener el nombre del repositorio de la URL en GitHub Pages
 function getRepoName() {
     const pathParts = window.location.pathname.split('/');
-    // Suponemos que el nombre del repositorio es el segundo segmento de la URL
+    // Suponemos que el nombre del repositorio es el segundo segmento de la URL en GitHub Pages
     return pathParts[1];
 }
 
+
+
 // Función para obtener la ruta correcta de nav.html
 function getNavPath() {
-    const repoName = getRepoName();
-    const currentPath = window.location.pathname;
-    
-    // Verificar si estamos en la raíz del repositorio o en una subcarpeta
-    const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
-    
-    // Construir la ruta correcta a nav.html
+    const hostname = window.location.hostname;
     let navPath = '';
-    if (isInRepoRoot) {
-        navPath = `/${repoName}/nav.html`;
+
+    // Verificar si estamos en un servidor local
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        // Ajustar la ruta según la estructura de tu servidor local
+        navPath = 'nav.html'; // Asumimos que nav.html está en la misma carpeta
     } else {
-        // Contar la profundidad de la URL actual para construir la ruta relativa
-        const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
-        for (let i = 0; i < depth; i++) {
-            navPath += '../';
+        // Asumimos que estamos en GitHub Pages
+        const repoName = getRepoName();
+        const currentPath = window.location.pathname;
+        
+        // Verificar si estamos en la raíz del repositorio o en una subcarpeta
+        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+        
+        if (isInRepoRoot) {
+            navPath = `/${repoName}/nav.html`;
+        } else {
+            // Contar la profundidad de la URL actual para construir la ruta relativa
+            const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
+            for (let i = 0; i < depth; i++) {
+                navPath += '../';
+            }
+            navPath += 'nav.html';
         }
-        navPath += 'nav.html';
     }
     
     return navPath;
 }
+
+
 
 // Ajustar los enlaces de navegación según la ubicación actual
 function adjustNavLinks() {
@@ -66,6 +82,8 @@ function adjustNavLinks() {
     });
 }
 
+
+
 // Función para obtener la ruta base correcta
 function getBasePath(currentPath) {
     const depth = (currentPath.match(/\//g) || []).length - 1;
@@ -75,6 +93,8 @@ function getBasePath(currentPath) {
     }
     return basePath;
 }
+
+
 
 // Configurar los enlaces de navegación
 function setupNavLinks() {
@@ -91,6 +111,8 @@ function setupNavLinks() {
         });
     });
 }
+
+
 
 // Llamada a la función para cargar la navegación
 document.addEventListener('DOMContentLoaded', loadNav);
