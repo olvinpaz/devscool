@@ -14,7 +14,7 @@ function loadNav() {
 }
 
 // Función para obtener la ruta correcta de nav.html
-function getNavPath() {
+function xxxgetNavPath() {
     const currentPath = window.location.pathname;
     const depth = (currentPath.match(/\//g) || []).length - 1;
     let navPath = '';
@@ -22,6 +22,30 @@ function getNavPath() {
         navPath += '../';
     }
     return navPath + 'nav.html';
+}
+
+// Función para obtener la ruta correcta de nav.html
+function getNavPath() {
+    const repoName = 'repositorio'; // Reemplaza con el nombre de tu repositorio
+    const currentPath = window.location.pathname;
+    
+    // Verificar si estamos en la raíz del repositorio o en una subcarpeta
+    const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+    
+    // Construir la ruta correcta a nav.html
+    let navPath = '';
+    if (isInRepoRoot) {
+        navPath = `/${repoName}/nav.html`;
+    } else {
+        // Contar la profundidad de la URL actual para construir la ruta relativa
+        const depth = (currentPath.match(/\//g) || []).length - 1;
+        for (let i = 0; i < depth; i++) {
+            navPath += '../';
+        }
+        navPath += 'nav.html';
+    }
+    
+    return navPath;
 }
 
 // Ajustar los enlaces de navegación según la ubicación actual
