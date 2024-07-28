@@ -294,9 +294,9 @@ function getBasePath(currentPath) {
             for (let i = 0; i < depth; i++) {
                 basePath += '../';
             }
-            //basePath = `/${repoName}/`//`/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
-            navPath = basePath + 'top-navbar.html';
-            subNavPath = basePath + 'sub-top-navbar.html';
+            basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
+            navPath = `${basePath}top-navbar.html`;
+            subNavPath = `${basePath}sub-top-navbar.html`;
         }
     }
 
