@@ -84,14 +84,47 @@ function adjustNavLinks() {
 
 
 
+
 // Función para obtener la ruta base correcta
-function getBasePath(currentPath) {
+function xxxgetBasePath(currentPath) {
     const depth = (currentPath.match(/\//g) || []).length - 1;
     let basePath = '';
     for (let i = 0; i < depth; i++) {
         basePath += '../';
     }
     return basePath;
+}
+
+// Función para obtener la ruta base correcta según la ubicación actual
+function getBasePath(currentPath) {
+    const hostname = window.location.hostname;
+    let basePath = '';
+    let navPath = '';
+
+    // Verificar si estamos en un servidor local
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        // Ajustar la ruta según la estructura de tu servidor local
+        basePath = '/';
+        navPath = 'nav.html'; // Asumimos que nav.html está en la misma carpeta
+    } else {
+        // Asumimos que estamos en GitHub Pages
+        const repoName = getRepoName();
+        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+        
+        if (isInRepoRoot) {
+            basePath = `/${repoName}/`;
+            navPath = `/${repoName}/nav.html`;
+        } else {
+            // Contar la profundidad de la URL actual para construir la ruta relativa
+            const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
+            for (let i = 0; i < depth; i++) {
+                basePath += '../';
+            }
+            navPath = basePath + 'nav.html';
+        }
+    }
+
+    return { basePath, navPath };
 }
 
 
