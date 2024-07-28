@@ -91,8 +91,8 @@ function adjustNavLinks() {
     topNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href.startsWith('http://') && !href.startsWith('https://')) {
-            // Añadir el nombre del repositorio a la ruta
-            const newHref = paths.basePath + href.replace(/^\//, '');
+            // Remover el repoName duplicado en caso de que ya esté presente
+            const newHref = (href.startsWith(`/${getRepoName()}/`)) ? href : paths.basePath + href.replace(/^\//, '');
             link.setAttribute('href', newHref);
         }
     });
@@ -102,12 +102,13 @@ function adjustNavLinks() {
     subNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href.startsWith('http://') && !href.startsWith('https://')) {
-            // Añadir el nombre del repositorio a la ruta
-            const newHref = paths.basePath + href.replace(/^\//, '');
+            // Remover el repoName duplicado en caso de que ya esté presente
+            const newHref = (href.startsWith(`/${getRepoName()}/`)) ? href : paths.basePath + href.replace(/^\//, '');
             link.setAttribute('href', newHref);
         }
     });
 }
+
 
 
 
@@ -152,8 +153,12 @@ function getBasePath(currentPath) {
             for (let i = 0; i < depth; i++) {
                 basePath += '../';
             }
-            navPath = basePath + 'top-navbar.html';
-            subNavPath = basePath + 'sub-top-navbar.html';
+            //navPath = basePath + 'top-navbar.html';
+            //subNavPath = basePath + 'sub-top-navbar.html';
+
+            basePath = `/${repoName}/${basePath}`; // Asegurar que la basePath siempre contenga el repoName
+            navPath = basePath + 'nav.html';
+            subNavPath = basePath + 'sub-nav.html';
         }
     }
 
