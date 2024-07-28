@@ -82,6 +82,34 @@ function XXXXadjustNavLinks() {
 }
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
+function ANTESadjustNavLinks() {
+    const currentPath = window.location.pathname;
+    const paths = getBasePath(currentPath);
+
+    // Ajustar enlaces del top-navbar
+    const topNavLinks = document.querySelectorAll('#top-navbar nav ul li a');
+    topNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http://') && !href.startsWith('https://')) {
+            // Remover el repoName duplicado en caso de que ya esté presente
+            const newHref = (href.startsWith(`/${getRepoName()}/`)) ? href : paths.basePath + href.replace(/^\//, '');
+            link.setAttribute('href', newHref);
+        }
+    });
+
+    // Ajustar enlaces de la sub-top-navbar
+    const subNavLinks = document.querySelectorAll('#sub-top-navbar nav ul li a');
+    subNavLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http://') && !href.startsWith('https://')) {
+            // Remover el repoName duplicado en caso de que ya esté presente
+            const newHref = (href.startsWith(`/${getRepoName()}/`)) ? href : paths.basePath + href.replace(/^\//, '');
+            link.setAttribute('href', newHref);
+        }
+    });
+}
+
+// Función para ajustar los enlaces de navegación según la ubicación actual
 function adjustNavLinks() {
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
@@ -114,8 +142,9 @@ function adjustNavLinks() {
 
 
 
+
 // Función para obtener la ruta base correcta según la ubicación actual
-function getBasePath(currentPath) {
+function SIgetBasePath(currentPath) {
     const hostname = window.location.hostname;
     let basePath = '';
     let navPath = '';
@@ -167,6 +196,56 @@ function getBasePath(currentPath) {
 }
 
 
+// Función para obtener la ruta base correcta según la ubicación actual
+function getBasePath(currentPath) {
+    const hostname = window.location.hostname;
+    let basePath = '';
+    let navPath = '';
+    let subNavPath = '';
+
+    // Verificar si estamos en un servidor local
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        // Ajustar la ruta según la estructura de tu servidor local
+        //basePath = '/';
+        //navPath = 'top-navbar.html'; // Asumimos que nav.html está en la misma carpeta
+        //subNavPath = 'sub-top-navbar.html'; // Asumimos que sub-top-navbar.html está en la misma carpeta
+        
+      
+        // Contar la profundidad de la URL actual para construir la ruta relativa
+        const depth = (currentPath.match(/\//g) || []).length - 1;
+        for (let i = 0; i < depth; i++) {
+            basePath += '../';
+        }
+        navPath = basePath + 'top-navbar.html';
+        subNavPath = basePath + 'sub-top-navbar.html';
+         /**/
+   
+    } else {
+        // Asumimos que estamos en GitHub Pages
+        const repoName = getRepoName();
+        const isInRepoRoot = true//= currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+        
+        if (isInRepoRoot) {
+            basePath = `/${repoName}/`;
+            navPath = `/${repoName}/top-navbar.html`;
+            subNavPath = `/${repoName}/sub-top-navbar.html`;
+        } else {
+            // Contar la profundidad de la URL actual para construir la ruta relativa
+            const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
+            for (let i = 0; i < depth; i++) {
+                basePath += '../';
+            }
+            //navPath = basePath + 'top-navbar.html';
+            //subNavPath = basePath + 'sub-top-navbar.html';
+
+            basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
+            navPath = basePath + 'top-navbar.html';
+            subNavPath = basePath + 'sub-top-navbar.html';
+        }
+    }
+
+    return { basePath, navPath, subNavPath };
+}
 
 
 
