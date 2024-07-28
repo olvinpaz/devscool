@@ -144,7 +144,7 @@ function adjustNavLinks() {
 
 
 // Función para obtener la ruta base correcta según la ubicación actual
-function SIgetBasePath(currentPath) {
+function getBasePath(currentPath) {
     const hostname = window.location.hostname;
     let basePath = '';
     let navPath = '';
@@ -195,57 +195,6 @@ function SIgetBasePath(currentPath) {
     return { basePath, navPath, subNavPath };
 }
 
-
-// Función para obtener la ruta base correcta según la ubicación actual
-function getBasePath(currentPath) {
-    const hostname = window.location.hostname;
-    let basePath = '';
-    let navPath = '';
-    let subNavPath = '';
-
-    // Verificar si estamos en un servidor local
-    if (hostname === 'localhost' || hostname === '127.0.0.1') {
-        // Ajustar la ruta según la estructura de tu servidor local
-        //basePath = '/';
-        //navPath = 'top-navbar.html'; // Asumimos que nav.html está en la misma carpeta
-        //subNavPath = 'sub-top-navbar.html'; // Asumimos que sub-top-navbar.html está en la misma carpeta
-        
-      
-        // Contar la profundidad de la URL actual para construir la ruta relativa
-        const depth = (currentPath.match(/\//g) || []).length - 1;
-        for (let i = 0; i < depth; i++) {
-            basePath += '../';
-        }
-        navPath = basePath + 'top-navbar.html';
-        subNavPath = basePath + 'sub-top-navbar.html';
-         /**/
-   
-    } else {
-        // Asumimos que estamos en GitHub Pages
-        const repoName = getRepoName();
-        const isInRepoRoot = true//= currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
-        
-        if (isInRepoRoot) {
-            basePath = `/${repoName}/`;
-            navPath = `/${repoName}/top-navbar.html`;
-            subNavPath = `/${repoName}/sub-top-navbar.html`;
-        } else {
-            // Contar la profundidad de la URL actual para construir la ruta relativa
-            const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
-            for (let i = 0; i < depth; i++) {
-                basePath += '../';
-            }
-            //navPath = basePath + 'top-navbar.html';
-            //subNavPath = basePath + 'sub-top-navbar.html';
-
-            basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
-            navPath = basePath + 'top-navbar.html';
-            subNavPath = basePath + 'sub-top-navbar.html';
-        }
-    }
-
-    return { basePath, navPath, subNavPath };
-}
 
 
 
