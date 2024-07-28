@@ -86,21 +86,25 @@ function adjustNavLinks() {
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
 
-    // Ajustar enlaces del navbar
+    // Ajustar enlaces del top-navbar
     const topNavLinks = document.querySelectorAll('#top-navbar nav ul li a');
     topNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href.startsWith('http://') && !href.startsWith('https://')) {
-            link.setAttribute('href', paths.basePath + href);
+            // Añadir el nombre del repositorio a la ruta
+            const newHref = paths.basePath + href.replace(/^\//, '');
+            link.setAttribute('href', newHref);
         }
     });
 
-    // Ajustar enlaces de la sub-navbar
+    // Ajustar enlaces de la sub-top-navbar
     const subNavLinks = document.querySelectorAll('#sub-top-navbar nav ul li a');
     subNavLinks.forEach(link => {
         const href = link.getAttribute('href');
         if (!href.startsWith('http://') && !href.startsWith('https://')) {
-            link.setAttribute('href', paths.basePath + href);
+            // Añadir el nombre del repositorio a la ruta
+            const newHref = paths.basePath + href.replace(/^\//, '');
+            link.setAttribute('href', newHref);
         }
     });
 }
