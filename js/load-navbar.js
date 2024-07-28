@@ -82,7 +82,7 @@ function XXXXadjustNavLinks() {
 }
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
-function ANTESadjustNavLinks() {
+function adjustNavLinks() {
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
 
@@ -110,7 +110,7 @@ function ANTESadjustNavLinks() {
 }
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
-function adjustNavLinks() {
+function ULTIMOadjustNavLinks() {
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
 
