@@ -26,7 +26,7 @@ function xxxgetNavPath() {
 
 // Función para obtener la ruta correcta de nav.html
 function getNavPath() {
-    const repoName = 'repositorio'; // Reemplaza con el nombre de tu repositorio
+    const repoName = 'devscool'; // Reemplaza con el nombre de tu repositorio
     const currentPath = window.location.pathname;
     
     // Verificar si estamos en la raíz del repositorio o en una subcarpeta
