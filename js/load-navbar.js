@@ -141,7 +141,7 @@ function getBasePath(currentPath) {
     } else {
         // Asumimos que estamos en GitHub Pages
         const repoName = getRepoName();
-        const isInRepoRoot = true//= currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
         
         if (isInRepoRoot) {
             basePath = `/${repoName}/`;
@@ -156,7 +156,8 @@ function getBasePath(currentPath) {
             //navPath = basePath + 'top-navbar.html';
             //subNavPath = basePath + 'sub-top-navbar.html';
 
-            basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
+            //basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
+            basePath = `/${repoName}/${basePath}`
             navPath = basePath + 'top-navbar.html';
             subNavPath = basePath + 'sub-top-navbar.html';
         }
