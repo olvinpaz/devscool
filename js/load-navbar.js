@@ -141,7 +141,7 @@ function getBasePath(currentPath) {
     } else {
         // Asumimos que estamos en GitHub Pages
         const repoName = getRepoName();
-        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+        const isInRepoRoot = true//= currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
         
         if (isInRepoRoot) {
             basePath = `/${repoName}/`;
