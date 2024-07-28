@@ -69,7 +69,7 @@ function XXXXadjustNavLinks() {
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
 function adjustNavLinks() {
-    const navLinks = document.querySelectorAll('.sidebar nav ul li a, .sub-sidebar nav ul li a');
+    const navLinks = document.querySelectorAll('#top-navbar nav ul li a, #sub-top-navbar nav ul li a');
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
 
