@@ -57,13 +57,27 @@ function getRepoName() {
 
 
 // Función para ajustar los enlaces de navegación según la ubicación actual
-function adjustNavLinks() {
+function XXXXadjustNavLinks() {
     const navLinks = document.querySelectorAll('#top-navbar nav ul li a, #sub-top-navbar nav ul li a');
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
 
     navLinks.forEach(link => {
         link.setAttribute('href', paths.basePath + link.getAttribute('href'));
+    });
+}
+
+// Función para ajustar los enlaces de navegación según la ubicación actual
+function adjustNavLinks() {
+    const navLinks = document.querySelectorAll('.sidebar nav ul li a, .sub-sidebar nav ul li a');
+    const currentPath = window.location.pathname;
+    const paths = getBasePath(currentPath);
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+        if (!href.startsWith('http://') && !href.startsWith('https://')) {
+            link.setAttribute('href', paths.basePath + href);
+        }
     });
 }
 
