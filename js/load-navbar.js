@@ -156,7 +156,7 @@ function getBasePath(currentPath) {
             //navPath = basePath + 'top-navbar.html';
             //subNavPath = basePath + 'sub-top-navbar.html';
 
-            basePath = `/${repoName}/${basePath}`; // Asegurar que la basePath siempre contenga el repoName
+            basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
             navPath = basePath + 'top-navbar.html';
             subNavPath = basePath + 'sub-top-navbar.html';
         }
