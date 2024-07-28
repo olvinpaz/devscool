@@ -24,9 +24,16 @@ function xxxgetNavPath() {
     return navPath + 'nav.html';
 }
 
+// Función para obtener el nombre del repositorio de la URL
+function getRepoName() {
+    const pathParts = window.location.pathname.split('/');
+    // Suponemos que el nombre del repositorio es el segundo segmento de la URL
+    return pathParts[1];
+}
+
 // Función para obtener la ruta correcta de nav.html
 function getNavPath() {
-    const repoName = 'devscool'; // Reemplaza con el nombre de tu repositorio
+    const repoName = getRepoName();
     const currentPath = window.location.pathname;
     
     // Verificar si estamos en la raíz del repositorio o en una subcarpeta
@@ -38,7 +45,7 @@ function getNavPath() {
         navPath = `/${repoName}/nav.html`;
     } else {
         // Contar la profundidad de la URL actual para construir la ruta relativa
-        const depth = (currentPath.match(/\//g) || []).length - 1;
+        const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
         for (let i = 0; i < depth; i++) {
             navPath += '../';
         }
