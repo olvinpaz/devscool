@@ -1,5 +1,5 @@
 // Función para cargar el componente de navegación
-function loadNav() {
+function FuncionalloadNav() {
     // Determinar la ruta correcta para nav.html
     const navPath = getNavPath();
 
@@ -11,6 +11,28 @@ function loadNav() {
             setupNavLinks();
         })
         .catch(error => console.error('Error al cargar la navegación:', error));
+}
+
+// Función para cargar el navbar
+function loadNav() {
+    const currentPath = window.location.pathname;
+    const { navPath } = getBasePath(currentPath);
+    
+    fetch(navPath)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok.');
+            }
+            return response.text();
+        })
+        .then(data => {
+            document.getElementById('nav-container').innerHTML = data;
+            adjustNavLinks(); // Ajustar los enlaces después de cargar el navbar
+            //setupNavLinks();
+        })
+        .catch(error => {
+            console.error('Error loading navbar:', error);
+        });
 }
 
 
@@ -38,7 +60,7 @@ function getRepoName() {
 
 
 // Función para obtener la ruta correcta de nav.html
-function getNavPath() {
+function FUNCIONALgetNavPath() {
     const hostname = window.location.hostname;
     let navPath = '';
 
@@ -75,7 +97,8 @@ function getNavPath() {
 function adjustNavLinks() {
     const navLinks = document.querySelectorAll('.sidebar nav ul li a');
     const currentPath = window.location.pathname;
-    const basePath = getBasePath(currentPath);
+    // const basePath = getBasePath(currentPath);
+    const { basePath } = getBasePath(currentPath);
 
     navLinks.forEach(link => {
         link.setAttribute('href', basePath + link.getAttribute('href'));
