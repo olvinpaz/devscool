@@ -1,8 +1,10 @@
 :root {
-    --navbar-height-mobile: 56px;
-    --navbar-bg-color-mobile: rgb(233, 233, 233);
+    --navbar-height-mobile: 49px;
+    --navbar-bg-color-mobile: rgb(255, 255, 255);
     --navbar-sub-bg-color-mobile: rgb(255, 255, 255);
     --navbar-padding-mobile: 5px;
+
+    --border-color-gray: rgba(0,0,0, 0.1);
 }
 
 .navbar {
@@ -16,25 +18,31 @@
     padding: var(--navbar-padding-mobile);
 
     width: 100%;
-    height: 56px;
+    height: calc(var(--navbar-height-mobile));
     border-bottom: 1px solid var(--border-color-gray);
     background-color: var(--navbar-bg-color-mobile);
 }
 
-#sub-top-navbar .navbar {
-    top: var(--navbar-height-mobile);
-    z-index: 999;
-    height: calc(var(--navbar-height-mobile) - 10px);
-    background-color: var(--navbar-sub-bg-color-mobile);
+#top-navbar{
+    height: calc(var(--navbar-height-mobile) + (var(--navbar-padding-mobile) * 2));
+    /* outline: 1px solid green; */
+    /* background-color: green; */
 }
 
-
-#top-navbar {
-    height: calc(var(--navbar-height-mobile));
+#top-navbar .navbar{
+    /* background-color: pink; */
 }
 
 #sub-top-navbar {
-    height: calc(var(--navbar-height-mobile) - 10px);
+    --height: calc(var(--navbar-height-mobile) + (var(--navbar-padding-mobile) * 2));
+    height: calc(var(--height) - 10px);
+}
+
+#sub-top-navbar .navbar {
+    top: calc(var(--navbar-height-mobile) + (var(--navbar-padding-mobile) * 2));
+    z-index: 999;
+    height: calc(var(--navbar-height-mobile) - 10px); 
+    background-color: var(--navbar-sub-bg-color-mobile);
 }
 
 
