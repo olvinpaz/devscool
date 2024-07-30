@@ -92,7 +92,7 @@ function adjustNavLinks() {
 
 
 // Función para obtener la ruta base correcta según la ubicación actual
-function getBasePath(currentPath) {
+function FuncionalgetBasePath(currentPath) {
     const hostname = window.location.hostname;
     let basePath = '';
     let navPath = '';
@@ -116,7 +116,7 @@ function getBasePath(currentPath) {
     } else {
         // Asumimos que estamos en GitHub Pages
         const repoName = getRepoName();
-        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}` || currentPath === `/${repoName}/../`;
+        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`; //  || currentPath === `/${repoName}/../`
 
         if (isInRepoRoot) {
             basePath = `/${repoName}/`;
@@ -141,6 +141,37 @@ function getBasePath(currentPath) {
 }
 
 
+// Función para obtener la ruta base correcta según la ubicación actual
+function getBasePath(currentPath) {
+    const hostname = window.location.hostname;
+    let basePath = '';
+    let navPath = '';
+    let subNavPath = '';
+
+    // Verificar si estamos en un servidor local
+    if (hostname === 'localhost' || hostname === '127.0.0.1') {
+        basePath = '/';
+    } else {
+        // Asumimos que estamos en GitHub Pages
+        const repoName = getRepoName();
+        const isInRepoRoot = currentPath === `/${repoName}/` || currentPath === `/${repoName}`;
+        
+        if (isInRepoRoot) {
+            basePath = `/${repoName}/`;
+        } else {
+            // Calcular la profundidad de la URL actual para construir la ruta relativa
+            const pathParts = currentPath.split('/').filter(part => part.length > 0);
+            const repoIndex = pathParts.indexOf(repoName);
+            const depth = pathParts.length - repoIndex - 1;
+            basePath = `/${repoName}/` + '../'.repeat(depth);
+        }
+    }
+
+    navPath = `${basePath}top-navbar.html`;
+    subNavPath = `${basePath}sub-top-navbar.html`;
+
+    return { basePath, navPath, subNavPath };
+}
 
 
 
