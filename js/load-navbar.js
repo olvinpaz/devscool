@@ -112,6 +112,7 @@ function getBasePath(currentPath) {
         }
         navPath = basePath + 'top-navbar.html';
         subNavPath = basePath + 'sub-top-navbar.html';
+        console.log('In Local Root basePath:',basePath);
     } else {
         // Asumimos que estamos en GitHub Pages
         const repoName = getRepoName();
@@ -121,6 +122,7 @@ function getBasePath(currentPath) {
             basePath = `/${repoName}/`;
             navPath = `${basePath}top-navbar.html`;
             subNavPath = `${basePath}sub-top-navbar.html`;
+            console.log('In Repo Root basePath:',basePath);
         } else {
             // Contar la profundidad de la URL actual para construir la ruta relativa
             const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
@@ -130,9 +132,11 @@ function getBasePath(currentPath) {
             basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
             navPath = `${basePath}top-navbar.html`;
             subNavPath = `${basePath}sub-top-navbar.html`;
+
+            
         }
     }
-    console.log('base path',basePath);
+    
     return { basePath, navPath, subNavPath };
 }
 
