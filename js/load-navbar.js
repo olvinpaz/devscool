@@ -163,7 +163,7 @@ function getBasePath(currentPath) {
             const pathParts = currentPath.split('/').filter(part => part.length > 0);
             const repoIndex = pathParts.indexOf(repoName);
             const depth = pathParts.length - repoIndex - 1;
-            basePath = `/${repoName}/` + '../'.repeat(depth);
+            basePath = `/${repoName}/`// + '../'.repeat(depth);
         }
     }
 
