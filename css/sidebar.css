@@ -65,6 +65,11 @@
     background-color: rgb(97, 97, 97, 0.3) !important;
 }
 
+.sidebar__link.active {
+    font-weight: bold;
+    color: blue;
+}
+
 
 
 
@@ -73,7 +78,7 @@
     display: flex;
 }
 
-.main {
+.main-content {
     flex: 1;
 }
 
