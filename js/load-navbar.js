@@ -107,7 +107,7 @@ function getBasePath(currentPath) {
         // Contar la profundidad de la URL actual para construir la ruta relativa
         const depth = (currentPath.match(/\//g) || []).length - 1;
         for (let i = 0; i < depth; i++) {
-            basePath += '../';
+            basePath += '../../';
         }
         navPath = basePath + 'top-navbar.html';
         subNavPath = basePath + 'sub-top-navbar.html';
@@ -124,7 +124,7 @@ function getBasePath(currentPath) {
             // Contar la profundidad de la URL actual para construir la ruta relativa
             const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
             for (let i = 0; i < depth; i++) {
-                basePath += '../';
+                basePath += '../../';
             }
             basePath = `/${repoName}/${basePath.replace(/^\.\.\//, '')}`; // Asegurar que la basePath siempre contenga el repoName y remover exceso de ../ al inicio
             navPath = `${basePath}top-navbar.html`;
