@@ -2,6 +2,7 @@
 function loadNav() {
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
+    console.log(paths);
 
     // Cargar el top-navbar
     fetch(paths.navPath)
