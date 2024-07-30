@@ -2,7 +2,7 @@
 function loadNav() {
     const currentPath = window.location.pathname;
     const paths = getBasePath(currentPath);
-    console.log(paths);
+    console.log('paths:\n', `basePath:   ${paths.basePath}\n navPath:    ${paths.navPath}\n subNavPath: ${paths.subNavPath}`);
 
     // Cargar el top-navbar
     fetch(paths.navPath)
@@ -112,7 +112,7 @@ function getBasePath(currentPath) {
         }
         navPath = basePath + 'top-navbar.html';
         subNavPath = basePath + 'sub-top-navbar.html';
-        console.log('In Local Root basePath:',basePath);
+        // console.log('In Local Root basePath:\n',basePath);
     } else {
         // Asumimos que estamos en GitHub Pages
         const repoName = getRepoName();
@@ -122,7 +122,7 @@ function getBasePath(currentPath) {
             basePath = `/${repoName}/`;
             navPath = `${basePath}top-navbar.html`;
             subNavPath = `${basePath}sub-top-navbar.html`;
-            console.log('In Repo Root basePath:',basePath);
+            // console.log('In Repo Root basePath:',basePath);
         } else {
             // Contar la profundidad de la URL actual para construir la ruta relativa
             const depth = (currentPath.match(/\//g) || []).length - 2; // -2 porque la ruta incluye el repositorio
