@@ -132,7 +132,7 @@ function getBasePath(currentPath) {
             subNavPath = `${basePath}sub-top-navbar.html`;
         }
     }
-
+    console.log('base path',basePath);
     return { basePath, navPath, subNavPath };
 }
 
