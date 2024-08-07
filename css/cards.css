@@ -1,0 +1,68 @@
+:root {
+
+    --card-course-border-radius: 10px;
+}
+
+.card-course-list {
+    display: flex;
+    gap: 20px;
+
+    width: 800px;
+
+}
+.card-course-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.card-course h2,
+.card-course h3 {
+    padding: 0px;
+    margin: 0px;
+}
+
+.card-course {
+    min-height: 270px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    outline: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--card-course-border-radius);
+}
+
+.card-course a {
+
+    /* display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%; */
+    /* background-color: red; */
+    text-decoration: none;
+}
+
+.card-course a img {
+    border-top-left-radius: var(--card-course-border-radius);
+    border-top-right-radius: var(--card-course-border-radius);
+    width: 100%;
+}
+
+.card-course__img {
+    border-top-left-radius: var(--card-course-border-radius);
+    border-top-right-radius: var(--card-course-border-radius);
+}
+
+.card-course_content {
+    padding: 15px;
+    padding-bottom: 5px;
+}
+
+.card_course__title:hover {
+    text-decoration: underline;
+}
+
+.card_course__title :visited {
+    color: #333;
+}
+
+.card-course__description {
+    font-size: 14px;
+}
