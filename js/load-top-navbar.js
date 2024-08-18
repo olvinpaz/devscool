@@ -1,5 +1,6 @@
 
-document.addEventListener('DOMContentLoaded', () => {
+//document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function () {
 
     function loadTopNav(href, title, targetIdContainer, callback) {
         fetch(href)
@@ -12,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .catch(error => console.error('Error al cargar el contenido:', error));
     }
 
-    function loadContent(href, targetIdContainer, callback) {
+    function FUNCIONALloadContent(href, targetIdContainer, callback) {
         fetch(href)
             .then(response => response.text())
             .then(data => {
@@ -21,6 +22,69 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => console.error('Error al cargar el contenido:', error));
     }
+
+    function loadContent(href, targetIdContainer, callback) {
+        fetch(href)
+            .then(response => response.text())
+            .then(data => {
+                const mainContent = document.querySelector(targetIdContainer);
+                mainContent.innerHTML = data;
+                //console.log("Data:\n", data)
+                //console.log("Data cargada")
+                codeEditorExtractor();
+
+                // Verificar que el contenido se ha cargado en la sección adecuada
+                const section = mainContent.querySelector('.main-content .section');
+                if (section) {
+                   //insertScriptInContent('http://127.0.0.1:5500/js/load-sections-doc-v2.js', section);
+                    //xxxloadScript();
+                   
+                } else {
+                    console.error('No se encontró .section dentro del contenido cargado.');
+                }
+
+                if (callback) callback(); // Ejecutar el callback si se proporciona
+            })
+            .catch(error => console.error('Error al cargar el contenido:', error));
+    }
+
+
+
+    function xinsertScriptInContent(scriptSrc, section) {
+        const script = document.createElement('script');
+        //script.src = `${scriptSrc}?_=${new Date().getTime()}`;
+        script.src = scriptSrc;
+        script.defer = true;  // Añadir defer para asegurarse de que se ejecute después de cargar el DOM
+        script.onload = () => console.log(`${scriptSrc} cargado y ejecutado en .section`);
+        section.appendChild(script);
+    }
+
+    function insertScriptInContent(scriptSrc, section) {
+        console.log(`Insertando ${scriptSrc} en .section`);
+        const script = document.createElement('script');
+        //script.src = `${scriptSrc}?_=${new Date().getTime()}`; // Añadir un timestamp para evitar el caché
+        script.src = scriptSrc;
+        script.onload = () => console.log(`${scriptSrc} cargado y ejecutado en .section`);
+        section.appendChild(script);
+    }
+
+    function XXXXXXXXXinsertScriptInContent(scriptSrc, targetIdContainer) {
+        const script = document.createElement('script');
+        script.src = `${scriptSrc}?_=${new Date().getTime()}`; // Añadir un timestamp para evitar el caché
+        script.onload = () => console.log(`${scriptSrc} cargado y ejecutado en ${targetIdContainer}`);
+        document.querySelector(targetIdContainer).appendChild(script);
+    }
+
+    function XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXinsertScriptInContent(scriptSrc, targetIdContainer) {
+        console.log(`Insertando ${scriptSrc} en ${targetIdContainer}`);
+        const script = document.createElement('script');
+        script.src = `${scriptSrc}?_=${new Date().getTime()}`;
+        script.onload = () => console.log(`${scriptSrc} cargado y ejecutado en ${targetIdContainer}`);
+        document.querySelector(targetIdContainer).appendChild(script);
+    }
+
+
+
 
     function setupSubTopNavbar(initialHref = null) {
         const links = document.querySelectorAll('#sub-top-navbar .navbar__link');
@@ -82,6 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const sidebarLinks = document.querySelectorAll('.sidebar__link');
         sidebarLinks.forEach(l => l.classList.remove('active'));
         link.classList.add('active');
+
+        //xxxloadScript();
+    }
+
+
+
+
+    // Función para cargar y ejecutar el script
+    function xxxloadScript() {
+         // Crear una etiqueta <script> para cargar el archivo sections-doc.js
+         const script = document.createElement('script');
+         script.src = 'http://127.0.0.1:5500/js/load-sections-doc-v2.js';
+         document.body.appendChild(script);
+         console.log('Carga el script section-doc.js')
     }
 
 

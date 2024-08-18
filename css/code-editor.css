@@ -15,7 +15,7 @@
     border-radius: 7px;
     background-color: #282c34;
     box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
-    width: 340px;
+    /* width: 340px; */
 }
 
 .code-editor pre { margin: 0px; }
@@ -54,20 +54,20 @@ pre code.hljs { padding: 0px 0px 0px 0px; }
 /* Mobile - Estilos en pantallas pequeñas */
 @media (max-width: 768px) {
     
-    .content{
+    .xxxcontent{
         width: 95vw;
     }
-    .code-editor{
+    .xxxcode-editor{
         width: 100%;
     }
 }
 
 /* Desktop - Cuando el usuario redusca el tamano de la ventana del navegador */
 @media (min-width: 769px) {
-    .content{
+    .xxxcontent{
         width: 95vw;
     }
-    .code-editor{
+    .xxxcode-editor{
         width: 100%;
     }
 }
@@ -75,9 +75,9 @@ pre code.hljs { padding: 0px 0px 0px 0px; }
 /* Desktop - Estilos en pantallas grandes */
 @media (min-width: 1024px) {
 
-    .side-bar { display: flex;}
+    .xxxside-bar { display: flex;}
     
-    .code-editor{
+    .xxxcode-editor{
         width: 860px;
     }
     
