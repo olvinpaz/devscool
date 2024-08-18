@@ -184,7 +184,7 @@ function fetchAndAppendSections(appendTargetID, sectionToExtract, showComments, 
      */
     setTimeout(() => {
         hljs.highlightAll();
-    }, 30); // Retraso de 50 milisegundos ajustar según sea necesario.
+    }, 60); // Retraso de 50 milisegundos ajustar según sea necesario.
     
 }
 
