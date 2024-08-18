@@ -30,7 +30,7 @@
 
     /* display: none; */
 
-    background-color: red;
+    /* background-color: red; */
  }
 
 .sidebar {
@@ -109,10 +109,10 @@
     display: flex;
 }
 
-.xxx-main-content {
+.main-content {
     flex: 1;
 }
-.main-content {
+.xxx-main-content {
     width: 70%;
 }
 
@@ -127,9 +127,40 @@
 
 
 
+.sub-menu-course-mobile {
+    display: none;
+    /* display: flex; */
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    
+
+}
+
+.sub-menu-course-mobile .sidebar__link {
+    /* width: 100px; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* align-items: center; */
+    justify-content: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
 
 /* Mobile - Estilos en pantallas pequeñas */
 @media (max-width: 768px) {
+
+    .sub-menu-course-mobile {display: flex;}
 
     #sidebar-container,
     .sidebar {

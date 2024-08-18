@@ -6,8 +6,15 @@
 .card-course-list {
     display: flex;
     gap: 20px;
-
-    width: 800px;
+    align-items: center;
+    flex-wrap: wrap;
+    
+    /* width: 800px; */
+    /* width: 60vw; */
+    /* width: 600px; */
+    margin-left: auto;
+    margin-right: auto;
+    /* background-color: pink; */
 
 }
 .card-course-list {
@@ -23,10 +30,13 @@
 
 .card-course {
     min-height: 270px;
-    width: 400px;
+    width: 300px;
     background-color: rgb(255, 255, 255);
     outline: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--card-course-border-radius);
+    /* margin-left: auto;
+    margin-right: auto; */
+
 }
 
 .card-course a {
@@ -65,4 +75,36 @@
 
 .card-course__description {
     font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mobile - Estilos en pantallas pequeñas */
+@media (max-width: 768px) {
+    .card-course-list {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+}
+
+/* Desktop - Cuando el usuario redusca el tamano de la ventana del navegador */
+@media (min-width: 769px) {
+
+}
+
+/* Desktop - Estilos en pantallas grandes */
+@media (min-width: 1024px) {
+
 }
