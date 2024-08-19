@@ -32,6 +32,8 @@
     /* display: none; */
 
     /* background-color: red; */
+
+    width: 15vw;
  }
 
 .sidebar {
@@ -51,6 +53,8 @@
 
     background-color: transparent;
     
+
+    width: 15vw;
 }
 
 .sidebar--fixed {
@@ -118,11 +122,11 @@
     display: flex;
 }
 
-.main-content {
+.xxx-main-content {
     flex: 1;
 }
-.xxx-main-content {
-    width: 70%;
+.main-content {
+    width: 65vw;
 }
 
 .section {
@@ -151,7 +155,7 @@
 
 
 #sidebar-container-right,
-#sidebar-container-right .sidebar.sidebar--fixed {
+#sidebar-container-right .sidebar {
     display: none;
     /* background-color: rebeccapurple; */
 }
@@ -182,6 +186,9 @@
 /* Desktop - Cuando el usuario redusca el tamano de la ventana del navegador */
 @media (min-width: 769px) {
 
+    .main-content {
+        width: 80vw;
+    }
 }
 
 /* Desktop - Estilos en pantallas grandes */
@@ -194,5 +201,9 @@
     #sidebar-container-right,
     #sidebar-container-right .sidebar.sidebar--fixed {
         display: flex;
+    }
+
+    .main-content {
+        width: 65vw;
     }
 }
