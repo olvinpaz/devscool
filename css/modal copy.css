@@ -1,0 +1,150 @@
+:root {
+  --modal-small:  500px;
+  --modal-medium: 50vw;
+  --modal-large:  80vw;
+  --modal-full:   100vw;
+  --modal-header-height: 36px;
+  --modal-body-height: 30vh;
+  /* --modal-body-width: 80vw; */
+}
+
+
+/* El modal (oculto por defecto) */
+.modal {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 9998;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  /* overflow: auto; */
+  background-color: rgba(0, 0, 0, 0.4); /* Fondo oscuro */
+}
+  
+/* Contenido del modal */
+.xxx-modal-content {
+  background-color: #fff;
+  /* margin: 15% auto; */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+
+  z-index: 9999;
+  overflow: auto;
+  height: 80vh;
+
+  /* margin-top: 10vh; */
+  /* margin-bottom: 10vh; */
+  margin-left: auto;
+  margin-right: auto;
+  /* margin-top: -15%; */
+  position: relative;
+}
+
+.modal-content {
+  z-index: 9999;
+  /* height: 80%; */
+
+
+  /* width: 80%; */
+
+
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  /* margin-top: auto;
+  margin-bottom: auto; */
+
+  display: flex;
+  flex-direction: column;
+  
+  outline: 2px solid red;
+}
+
+.modal-content--small {
+  /* width: var(--modal-small); */
+  width: 600px;
+}
+
+.modal-content--small .modal-body {
+  max-height: 25vh;
+}
+
+.modal-content--medium {
+  width: var(--modal-medium);
+}
+
+.modal-content--large {
+  width: var(--modal-large);
+}
+
+.modal-content--full {
+  width: var(--modal-full);
+}
+
+
+
+.modal-header{
+  display: flex;
+  align-items: center;
+  height: var(--modal-header-height);
+  /* max-width: var(--modal-body-width); */
+  /* width: 80%; */
+  background-color: #fff;
+  border-bottom: 1px solid #ededed;
+
+  /* position: sticky; */
+  /* top: 0px; */
+
+  /* margin-top: 7%; */
+  /* margin-left: auto;
+  margin-right: auto; */
+
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.modal-body{
+  /* max-height: var(--modal-body-height); */
+  
+  
+  
+  /* max-width: var(--modal-body-width); */
+  padding: 20px;
+  overflow: auto;
+  background-color: #fff;
+}
+
+
+.modal-title{
+  /* flex: 1; */
+  width: 100%;
+  background-color: transparent;
+}
+
+/* Botón de cerrar */
+.close {
+  color: #aaa;
+  /* float: right; */
+  font-size: 1.5rem;
+  font-weight: bold;
+
+  height: 32px;
+  width: 32px;
+  padding: 0px 7px;
+  text-align: center;
+  /* position: sticky;
+  top: 0px; */
+  background-color: #fff;
+  border-radius: 2px;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

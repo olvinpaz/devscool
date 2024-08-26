@@ -1,0 +1,206 @@
+<section class="section">
+    <h3 data-page-title="">Estructura base de un documento HTML</h3>
+    <p>
+        El siguiente código define la esctructura base de un documento HTML 
+    </p>
+
+    <div id="base-structure" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/base-structure.html">
+    </div>
+
+
+<div style="display: none;">
+<!--
+Base structure
+Otra linea 
+Terceralinea
+-->
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título de la página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    <!-- Aqui va el contenido que se muestra al usuario -->
+    Aquí va el contenido que se muestra al usuario
+&lt;/body&gt;
+&lt;/html&gt;
+<!-- endoc -->
+</div>
+
+    <br><br><br>
+    <h3>&lt;!DOCTYPE html&gt;</h3>
+    <p>
+        La declaración <span class="tag-wrapper">&lt;!DOCTYPE html&gt;</span> indica al navegador que este es un documento HTML5. 
+        Aunque no es una etiqueta HTML propiamente dicha, es necesaria para asegurar que el documento se interprete correctamente.
+    </p>
+
+    <br>
+    <h3 class="h-bg">&lt;html&gt;</h3>
+    <p>
+        Es el elemento raíz de un documento HTML. Es el contenedor principal que envuelve todo el contenido del documento HTML y marca el inicio del documento HTML. 
+        Todo lo que va dentro de estas etiquetas es considerado parte del documento HTML,
+        por lo cual todo (excepto el <b>&lt;!DOCTYPE html&gt;</b>) debe estar dentro de la etiqueta <span>&lt;html&gt;</span> y <span>&lt;/html&gt;</span>.
+    </p>
+
+    <p>
+        El atributo <b>"lang"</b> en la etiqueta &lt;html&gt; especifica el idioma principal del contenido de la página web. 
+        Este atributo es importante para navegadores, motores de búsqueda, y tecnologías asistivas, como lectores de pantalla, 
+        ya que les ayuda a determinar cómo procesar y mostrar el contenido de manera adecuada.
+    </p>
+
+    <p>
+        Los valores que recive el atributo <b>"lang"</b> pueden ser:<br>
+        <b>"en"</b> para ingles<br>
+        <b>"es"</b> para español<br>
+        <b>"fr"</b> para frances<br>
+        y cualquier otro idioma
+    </p>
+
+    <h3>¿Por qué es importante?</h3>
+    <p>
+        <b>1. Accesibilidad:</b> Los lectores de pantalla usan el atributo <b>"lang"</b> para seleccionar la pronunciación y la entonación correcta. 
+        Esto mejora la experiencia para personas con discapacidades visuales.
+    </p>
+
+    <p>
+        <b>2. SEO (Optimización para Motores de Búsqueda):</b> Los motores de búsqueda utilizan el atributo <b>"lang"</b> para entender el idioma de la página 
+        y para mostrar los resultados de búsqueda relevantes a los usuarios en el idioma correcto.
+    </p>
+    <p>
+        <b>3. Renderización Correcta:</b> Algunos caracteres especiales y símbolos pueden renderizarse de manera diferente según el idioma. Especificar el idioma ayuda a garantizar que se rendericen correctamente.
+    </p>
+
+    <h3 class="h-bg">&lt;head&gt;</h3>
+    <p>
+        El elemento <span>&lt;head&gt;</span> contiene metadatos sobre el documento, es decir, 
+        información que no se muestra directamente en la página web, pero que es esencial para 
+        el funcionamiento correcto del sitio web, como su título, enlaces a archivos CSS, scripts, 
+        la indexación en motores de búsqueda, y la interacción con navegadores y redes sociales y otras configuraciones.
+    </p>
+
+    <p>Algunos de los elementos más comunes que se encuentran dentro de un <span>&lt;head&gt;</span>:</p>
+
+    <p>
+       <b>1. &lt;title&gt;:</b> Define el título del documento, que se muestra en la pestaña del navegador y como título en los resultados de búsqueda.
+    </p>
+    <div id="title-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/base-structure.html">
+    </div>
+
+<div style="display: none;">
+<!-- Title Tag-->
+&lt;title&gt;Título de la página&lt;/title&gt;
+<!-- endoc -->
+</div>
+
+    <br><br>
+    <p>
+        <b>2. &lt;meta&gt;:</b> Etiquetas que proporcionan metadatos adicionales. Algunas de las más comunes incluyen:
+    </p>
+    <p>
+        <b>Charset:</b> Define la codificación de caracteres.<br>
+        <span class="tag-wrapper"><code>&lt;meta charset="UTF-8"&gt;</code></span>
+    </p>
+    <p>
+        <b>Viewport:</b> Establece el área visible del navegador, crucial para el diseño responsivo que se adapta a las diferentes pantallas de los disposivo.<br>
+        <span class="tag-wrapper"><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></span>
+    </p>
+    <p>
+        <b>Description:</b> Proporciona una breve descripción del contenido de la página, útil para los motores de búsqueda.<br>
+        <span class="tag-wrapper"><code>&lt;meta name="description" content="Una descripción breve de mi página web."&gt;</code></span>
+    </p>
+    <p>
+        <b>Keywords:</b> Palabras clave relacionadas con el contenido de la página (menos usado en la actualidad).<br>
+        <span class="tag-wrapper"><code>&lt;meta name="keywords" content="Cursos, Tecnologías, Programación"&gt;</code></span>
+    </p>
+    <p>
+        <b>3. &lt;link&gt;:</b> Se usa para vincular otros recursos, como hojas de estilo CSS, iconos, fuentes, etc.<br>
+
+        <!-- <pre><code>
+        &lt;link rel="icon" href="favicon.ico"&gt;
+        &lt;link rel="stylesheet" href="styles.css"&gt;
+        </code> -->
+    </p>
+
+    <div id="link-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/examples/base-structure.html">
+    </div>
+
+<div style="display: none;">
+    <!-- Link Tag2-->
+    &lt;link rel="icon" href="favicon.ico"&gt;
+    &lt;link rel="stylesheet" href="styles.css"&gt;
+    <!-- endoc -->
+</div>
+
+    <br>
+    <p>
+        <b>4. &lt;style&gt;:</b> Permite incluir CSS directamente dentro del documento HTML. Aunque no es recomendado 
+        para grandes volúmenes de código CSS, puede ser útil para estilos rápidos.
+    </p>
+    <div id="style-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/examples/base-structure.html">
+    </div>
+
+    <br>
+    <p>
+       <b>5. &lt;script&gt;:</b> Se utiliza para vincular o incluir scripts de JavaScript que afectan al comportamiento de la página.<br>
+    </p>
+    <div id="script-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/examples/base-structure.html">
+    </div>
+
+    <br>
+    <p>
+       <b>6. &lt;base&gt;:</b> Define la URL base para todos los enlaces relativos en el documento.
+    </p>
+    <div id="base-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/examples/base-structure.html">
+    </div>
+
+    <br>
+    <p>
+        <b>7. &lt;meta property="og:title"&gt; y otros metadatos de Open Graph:</b> Utilizados para mejorar 
+        la forma en que se comparte la página en redes sociales, controlando cómo se muestran el título, la descripción, la imagen, etc.
+    </p>
+    <div id="property-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/examples/base-structure.html">
+    </div>
+
+    <br>
+    <p>
+       <b>8. &lt;noscript&gt;:</b> Se muestra cuando el navegador del usuario no soporta o tiene deshabilitado JavaScript.
+    </p>
+    <div id="noscript-tag" 
+        class="code-editor"
+        data-show-comments="false"
+        data-src="html/examples/base-structure.html">
+    </div>
+
+    <br>
+    <p>
+        En resumen el <b>&lt;head&gt;:</b> es el lugar donde se incluyen todas las configuraciones y enlaces necesarios para que el navegador 
+        pueda interpretar, visualizar y mostrar correctamente el contenido del documento HTML. 
+        Es crucial para la optimización SEO, la apariencia de la página y su funcionalidad general.
+    </p>
+
+    <div style="height: 150px;"></div>
+
+</section>

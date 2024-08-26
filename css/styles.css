@@ -2,6 +2,7 @@
 @import "sidebar.css";
 @import "cards.css";
 @import "code-editor.css";
+@import "modal.css";
 
 
 body {
@@ -30,7 +31,7 @@ nav ul li {
 nav ul li a {
     text-decoration: none;
     color: #333;
-    font-weight: bold;
+    font-weight: 500;
 }
 
 nav ul li a:hover {
@@ -41,6 +42,20 @@ p {
     line-height: 1.475rem;
 }
 
+
+
+.tag-wrapper {
+    padding: 1px 3px;
+    border-radius: 5px;
+    font-weight: 500;
+    background-color: #e2e2e2;
+}
+
+.h-bg {
+    padding: 10px;
+    background-color: #ffffff;
+    border-bottom: 2px solid #858585;
+}
 
 
 
