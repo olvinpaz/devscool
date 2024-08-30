@@ -1,9 +1,10 @@
 :root {
-  --modal-small:  500px;
+  /* --modal-small:  500px;
   --modal-medium: 50vw;
   --modal-large:  80vw;
-  --modal-full:   100vw;
-  --modal-header-height: 36px;
+  --modal-full:   100vw; */
+  /* --modal-header-height: 7vh; */
+  --modal-header-height: 59px;
   --modal-body-height: 30vh;
   /* --modal-body-width: 80vw; */
 }
@@ -61,27 +62,36 @@
 }
 
 .modal-content--medium {
-  width: 400px;
+  width: 100vw;
+  margin-top: auto;
+  margin-bottom: 0px;
 }
 
 .modal-content--medium .modal-body {
   height: 50vh;
+  padding-bottom: 10vh;
 }
 
 .modal-content--large {
-  width: 400px;
+  width: 100vw;
+  margin-top: auto;
+  margin-bottom: 0px;
 }
 
 .modal-content--large .modal-body {
   height: 75vh;
+  padding-bottom: 10vh;
 }
 
 .modal-content--full {
-  width: 400px;
+  width: 100vw;
 }
 
 .modal-content--full .modal-body {
-  height: 88vh;
+  /* height: 88vh; */
+  /* height: calc((100vh) - (var(--modal-header-height) + 41px)) ; */
+  height: calc((100vh) - (var(--modal-header-height) *2));
+  padding-bottom: var(--modal-header-height);
 }
 
 
@@ -97,8 +107,7 @@
 }
 
 .modal-body{
-  /* max-height: var(--modal-body-height); */
-  padding: 20px;
+  padding: 0 20px;
   overflow: auto;
   background-color: #fff;
 }
@@ -121,7 +130,7 @@
   width: 32px;
   padding: 0px 7px;
   text-align: center;
-  background-color: #fff;
+  background-color: transparent;
   border-radius: 2px;
 }
 
@@ -152,11 +161,29 @@
     height: 150px;
   }
 
+  .modal-content--medium {
+    width: 90vw;
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
+  
+  .modal-content--medium .modal-body {
+    height: 50vh;
+    padding-bottom: 5vh;
+  }
+
 }
 
 /* Desktop - Estilos en pantallas grandes */
 @media (min-width: 1024px) {
 
+  .modal-content--medium {
+    width: 800px;
+  }
+
+  .modal-content--large {
+    width: 800px;
+  }
 }
 
 /* Desktop large - Estilos en pantallas muy grandes */

@@ -3,6 +3,7 @@
 @import "cards.css";
 @import "code-editor.css";
 @import "modal.css";
+@import "buttons.css";
 
 
 body {
@@ -42,6 +43,7 @@ p {
     line-height: 1.475rem;
 }
 
+ol, ul { padding-inline-start: 20px; }
 
 
 .tag-wrapper {
@@ -72,6 +74,11 @@ p {
     .content{
         width: 95vw;
     }
+}
+
+/* Desktop - Cuando el usuario redusca el tamano de la ventana del navegador */
+@media (min-width: 768px) {
+    ol, ul { padding-inline-start: 40px; }
 }
 
 /* Desktop - Cuando el usuario redusca el tamano de la ventana del navegador */

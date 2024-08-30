@@ -1,0 +1,121 @@
+<div class="sections">
+    <section class="section">
+        <h3 class="h-bg">&lt;html&gt;</h3>
+        <p>
+            Es el elemento raíz de un documento HTML. Es el contenedor principal que envuelve todo el contenido del documento HTML y marca el inicio del documento HTML. 
+            Todo lo que va dentro de estas etiquetas es considerado parte del documento HTML,
+            por lo cual todo (excepto el <b><code>&lt;!DOCTYPE html&gt;</code></b>) debe estar dentro de la etiqueta <span><code>&lt;html&gt;</code></span> y <span><code>&lt;/html&gt;</code></span>.
+        </p>
+    
+        <p>
+            <b>El atributo <code>"lang"</code></b> en la etiqueta <b><code>&lt;html&gt;</code></b> especifica el idioma principal del contenido de la página web. 
+            Este atributo es importante para navegadores, motores de búsqueda, y tecnologías asistivas, como lectores de pantalla, 
+            ya que les ayuda a determinar cómo procesar y mostrar el contenido de manera adecuada.
+        </p>
+    
+        <p>Los valores que recive el atributo <b><code>"lang"</code></b> pueden ser:<br></p>
+        <ul>
+            <li><b><code>"en"</code></b> para ingles<br></li>
+            <li><b><code>"es"</code></b> para español<br></li>
+            <li><b><code>"fr"</code></b> para frances<br></li>
+        </ul>
+        <p>y cualquier otro idioma.</p>
+        
+    
+        <h3>¿Por qué es importante?</h3>
+        <ol>
+            <li>
+                <p>
+                    <b>Accesibilidad:</b> Los lectores de pantalla usan el atributo <b><code>"lang"</code></b> para seleccionar la pronunciación y la entonación correcta. 
+                    Esto mejora la experiencia para personas con discapacidades visuales.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>SEO (Optimización para Motores de Búsqueda):</b> <button id="openModal" class="btn-more-info" data-modal-target="#SEOInfoModal">Más info</button> Los motores de búsqueda utilizan el atributo <b><code>"lang"</code></b> para entender el idioma de la página 
+                    y para mostrar los resultados de búsqueda relevantes a los usuarios en el idioma correcto.
+                </p>
+            </li>
+            <li>
+                <p>
+                    <b>Renderización Correcta:</b> Algunos caracteres especiales y símbolos pueden renderizarse de manera diferente según el idioma. Especificar el idioma ayuda a garantizar que se rendericen correctamente.
+                </p>
+            </li>
+        </ol>
+
+        <h3>Ejemplo:</h3>
+        <ol>
+            <li>
+                <p><strong>Página en Inglés:</strong></p>
+                <div id="lang-english-attribute" 
+                    class="code-editor"
+                    data-show-comments="false"
+                    data-src="html/examples/base-structure.html">
+                </div>
+                <p>En este ejemplo, el valor <b><code>"en"</code></b> <b><code>&lt;html lang="en"&gt</code></b> indica que el idioma principal de la página es inglés.</p>
+            </li>
+
+            <li>
+                <p><strong>Página en Español:</strong></p>
+                <div id="lang-espanol-attribute" 
+                    class="code-editor"
+                    data-show-comments="false"
+                    data-src="html/examples/base-structure.html">
+                </div>
+                <p>Aquí, el valor <b><code>"es"</code></b> <b><code>&lt;html lang="es"&gt</code></b> indica que el contenido de la página está en español.</p>
+            </li>
+
+            <li>
+                <p><strong>Página en Francés con contenido específico en otro idioma:</strong></p>
+                <div id="lang-french-attribute" 
+                    class="code-editor"
+                    data-show-comments="false"
+                    data-src="html/examples/base-structure.html">
+                </div>
+                <p>
+                En este caso, la página es principalmente en francés ya que el valor indicado para el atributo <b><code>"lang"</code></b> es <b><code>"fr"</code></b>
+                pero hay un párrafo específico en inglés con el valor <b><code>"en"</code></b> <b><code>&lt;html lang="en"&gt</code></b>.                </p>
+            </li>
+        </ol>
+
+        <p>Usar el atributo <b><code>"lang"</code></b> correctamente es una práctica recomendada para mejorar la accesibilidad, SEO y la experiencia del usuario en general.</p>
+    </section>
+</div>
+
+<!-- Contenedor del modal -->
+<div id="SEOInfoModal" class="modal">
+    
+    <!-- Contenido del modal -->
+    <div class="modal-content modal-content--large">
+        <div class="modal-header">
+            <div class="modal-title">
+                <span>Información</span>
+            </div>
+            <div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <h3>SEO (Optimización para Motores de Búsqueda) </h3>
+            <p>es el conjunto de estrategias y técnicas utilizadas para mejorar la visibilidad y el posicionamiento de un sitio web en los resultados orgánicos de los motores de búsqueda, como Google, Bing, o Yahoo.</p>
+            <p>SEO es como el marketing tradicional, pero en el mundo digital. Imagina que tienes una tienda en una calle muy transitada; SEO es lo que te ayuda a asegurarte de que tu tienda esté en una posición destacada, donde más personas la vean y entren, en lugar de estar escondida en una calle secundaria.</p>
+            
+            <h3>¿Cómo funciona en la práctica?</h3>
+            <p>
+                SEO se enfoca en entender cómo funcionan los motores de búsqueda, qué buscan las personas, y cómo estructurar y presentar tu contenido para que sea relevante y atractivo tanto para los motores de búsqueda como para los usuarios. Esto implica:
+            </p>
+            <ol>
+                <li><p><strong>Investigación de Palabras Clave:</strong> Identificar las palabras y frases que las personas utilizan para buscar productos, servicios o información relacionada con tu sitio.</p></li>
+                <li><p><strong>Optimización On-Page:</strong> Ajustar el contenido del sitio web, como títulos, descripciones, imágenes, y la estructura del sitio, para que sea más relevante para esas palabras clave.</p></li>
+                <li><p><strong>Optimización Técnica:</strong> Mejorar aspectos técnicos del sitio web, como la velocidad de carga, la compatibilidad con dispositivos móviles, y la seguridad, para que sea fácil de usar y entender para los motores de búsqueda.</p></li>
+                <li><p><strong>Construcción de Enlaces (Link Building):</strong> Crear una red de enlaces desde otros sitios web de calidad hacia tu sitio, lo que aumenta la autoridad y la credibilidad a ojos de los motores de búsqueda.</p></li>
+                <li><p><strong>Experiencia del Usuario (UX):</strong> Asegurarse de que los visitantes tengan una buena experiencia navegando por el sitio, con contenido relevante, fácil de entender y útil.</p></li>
+            </ol>
+
+            <h3>Ejemplo:</h3>
+            <p>Si tienes un negocio de venta de zapatos en línea, el SEO te ayudaría a aparecer entre los primeros resultados cuando alguien busque "comprar zapatos en línea" o "mejores zapatos para correr". Cuanto mejor sea tu estrategia de SEO, más probable es que tu sitio aparezca en la primera página de resultados, lo que lleva a más visitas, y potencialmente, a más ventas.</p>
+
+            <p><b>En resumen,</b> SEO es esencialmente sobre "ser encontrado fácilmente" en un vasto océano digital, asegurando que tu sitio web destaque entre la multitud y atraiga a los visitantes adecuados.</p>
+        </div>
+    </div>
+</div>

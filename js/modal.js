@@ -40,13 +40,17 @@ var modals = document.querySelectorAll(".modal");
 var closeBtns = document.querySelectorAll(".close");
 
 // Función para abrir un modal
+// Cuando el usuario haga clic en el botón, abrir el modal y deshabilitar el scroll en el body
 function openModal(modal) {
   modal.style.display = "flex";
+  document.body.style.overflow = "hidden"; // Deshabilitar scroll del body
 }
 
 // Función para cerrar un modal
+// Cuando el usuario haga clic en (x), cerrar el modal y habilitar el scroll en el body
 function closeModal(modal) {
   modal.style.display = "none";
+  document.body.style.overflow = "auto"; // Habilitar scroll del body
 }
 
 // Añadir evento a los botones para abrir el modal correspondiente
