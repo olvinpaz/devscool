@@ -1,0 +1,235 @@
+<style>
+    .xxximg-wrapper-difusion {
+        width: 300px;
+
+    }
+    .xxximg-difuminada {
+             /*filter: blur(5px); Ajusta el valor en px para mayor o menor difuminación */
+            width: 300px; /* Ajusta el tamaño de la imagen según sea necesario */
+            filter: blur(10px); /* Aplica un desenfoque general */
+            mask-image: radial-gradient(circle, 
+                                        rgba(0, 0, 0, 1) 20%, /* Centro nítido */
+                                        rgba(0, 0, 0, 0) 100%); /* Bordes difuminados */
+            -webkit-mask-image: radial-gradient(circle, 
+                                                rgba(0, 0, 0, 1) 100%, 
+                                                rgba(0, 0, 0, 0) 50%); /* Soporte para navegadores WebKit */
+        }
+
+    .default-ltr-cache-1nyvr5w {
+        position: absolute;
+        inset: 0px;
+        z-index: -1;
+        background-image: url(html/img/digital-kingdom.jpeg);
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        /*filter: blur(2rem);
+         filter: blur(0.025rem); */
+
+        
+    }
+
+    .history-card-wrapper__img {
+        position: absolute;
+        inset: 0px;
+        z-index: -1;
+        background-image: url(html/img/digital-kingdom.jpeg);
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        opacity: 0.9;
+    }
+    
+    .history-card-wrapper {
+        position: relative;
+        width: 100%;
+        /* padding-bottom: 56.25%; */
+        overflow: hidden;
+
+        /* border-radius: 10px; */
+
+        display: flex;
+        flex-direction: column;
+
+    
+    }
+
+    .history-card-wrapper::after {
+        content: "";
+        position: absolute;
+        inset: 0px;
+        z-index: 2;
+        background: linear-gradient(40deg, rgb(22, 22, 22) 24.16%, rgba(6, 10, 23, 0) 56.61%), linear-gradient(0deg, rgb(22, 22, 22) 3.91%, rgba(6, 10, 23, 0) 69.26%);
+       
+    }
+
+    .history-card-wrapper img {
+        position: absolute;
+        inset: 0px;
+        z-index: 2;
+        /* background-image: url(html/img/digital-kindom.jpeg); */
+        background-size: cover;
+        background-position: center top;
+        background-repeat: no-repeat;
+        opacity: 0.9;
+        width: 100%;
+
+        width: 100%;
+        /* height: 100%; */
+        object-fit: cover; /* La imagen se ajusta sin recorte */
+    }
+
+    .history-card-wrapper__p{
+        /* position: relative; */
+        z-index: 3;
+        bottom: 0;
+        margin-top: auto;
+        /* margin-bottom: auto; */
+        background-color: rgba(0, 0, 0, 0.507);
+        color: #fff;
+
+        padding: 20px;
+        padding-top: 64%;
+
+        
+
+    }
+    .history-card-wrapper__p p {
+        /* font-size: 1.10rem; */
+        text-align: justify;
+    }
+
+    .history-card-wrapper__p h3 {
+        font-size: 50px; 
+        color: #ffa700;
+        padding: 0;
+        margin-bottom: 0;
+        /* background-color: rgba(0, 0, 0, 0.575); */
+    }
+            
+</style>
+<div class="sections">
+    <section class="section">
+        <h3 class="h-bg">Etiquetas HTML (tags)</h3>
+
+        <p><b>Antes de continuar</b> <button id="openModal" class="btn-more-info" data-modal-target="#historyDigiKingdomModal">Lee el cuento aquí</button></p>
+        
+        <p>Si te pudiste dar cuenta, en la narrativa del cuento se puede visualizar una <b><code>"imagen"</code></b>, un <b><code>título</code></b>, y un <b><code>párrafo</code></b>. Esto nostros lo sabemos como humanos que somos, porque así lo hemos aprendido, pero el navegador web, no lo sabe, por lo que es necesario hacerle saber, cuando es una imágen, un título, un parrafo, un botón, una lista sin orden, una lista ordenada etc.</p>
+
+        <p>Es aqui donde entra en acción el Lenguage de Marcado de HiperTexto <strong>HTML (HyperText Markup Language)</strong> el cual nos permite ir marcando todo el contenido de cada ducumento HTML, para que el navegador lo pueda interpretar correctamente a traves de lo que se conoce como <strong>etiquetas HTML</strong> o <strong>tags.</strong></p>
+        
+        <p>
+            Las etiquetas HTML definen cómo se organiza y se presenta el contenido en el navegador. Cada etiqueta tiene un propósito específico y actúa como un contenedor que da formato, organiza o establece características para el contenido. HTML utiliza una sintaxis de apertura y cierre para definir estos elementos, que incluyen texto, imágenes, enlaces, formularios, scripts y otros tipos de contenido interactivo. La mayoría de las etiquetas son pares, con una etiqueta de apertura y una de cierre, aunque algunas, como <code>&lt;img&gt;</code> o <code>&lt;br&gt;</code>, son auto-cerrables.
+            
+        </p>
+        <p>Las etiquetas no solo determinan la apariencia básica del contenido, sino que también comunican la semántica del contenido al navegador y a los motores de búsqueda, mejorando la accesibilidad y el SEO. Además, HTML trabaja en conjunto con CSS (para el estilo) y JavaScript (para la interactividad), lo que permite construir páginas web modernas y dinámicas. Cada etiqueta tiene atributos que permiten personalizar aún más su comportamiento, añadiendo propiedades como clases, identificadores, estilos en línea y enlaces a scripts.</p>
+        <br>
+
+        <h3>Ejemplos:</h3>
+        <ol>
+            <li>
+                <p><strong>Imagen:</strong> para marcar el contenido como una imagen utilizamos la etiqueta correspondiente para imagen <code>&lt;img&gt;</code> y le indicamos en el atributo <b><code>"src"</code> </b> el cual es la abreviación en inglés de <b><code>"source"</code></b> (significa <b><code>Origen</code></b> en español), la ruta donde se encuentra el archivo de la imagen que queremos que se visualice. Esta etiqueta es de auto cierre.</p>
+                <p><Strong>Código HTML</Strong>:</p>
+                <div id="image" 
+                    class="code-editor"
+                    data-show-comments="false"
+                    data-src="html/tags.html">
+                </div>
+                
+                <p><strong>Resultado visible al usuario:</strong></p>
+                <!-- image -->
+                <img src="html/img/digital-kingdom.jpeg" width="200">
+                <!-- endoc -->
+            </li>
+            <br>
+
+            <li>
+                <p><strong>Título:</strong> para marcar un texto como título usamos las etiquetas para títulos según el tamaño o jerarquía deseada, desde el tamaño más grande con la etiqueta <code>&lt;h1&gt;</code> hasta el tamaño más pequeño con la etiqueta <code>&lt;h6&gt;</code>.
+                <p><Strong>Código HTML</Strong>:</p>
+                <div id="title" 
+                    class="code-editor"
+                    data-show-comments="false"
+                    data-src="html/tags.html">
+                </div>
+
+                <p><strong>Resultado visible al usuario:</strong></p>
+                <!-- Title -->
+                <h3>Digi Kingdom</h3>
+                <!-- endoc -->
+            </li>
+            <br>
+
+            <li>
+                <p><strong>Párrafo:</strong> el siguiente código HTML nos permite marcar el contenido de un documento HTML como un párrafo, indicando el início con la etiqueta de apertura para párrafo <code>&lt;p&gt;</code> y su fin con la etiqueta de cierre <code>&lt;/p&gt;</code>. De esta forma el navegador web podrá interpretar el contenido que hemos marcado como un párrafo y así porder renderizarlo o mostrarlo correctamente al usuario.</p>
+                <p><Strong>Código HTML</Strong>:</p>
+                <div id="parrafo" 
+                    class="code-editor"
+                    data-show-comments="false"
+                    data-src="html/tags.html">
+                </div>
+        
+                <p><strong>Resultado visible al usuario:</strong></p>
+        
+                <!-- parrafo -->
+                <p>
+                    Había una vez un joven programador llamado Sam, 
+                    que vivía en un reino digital lleno de líneas de código 
+                    y variables misteriosas. Un día, mientras depuraba su último proyecto, 
+                    Sam se topó con un error inesperado: un bucle infinito que amenazaba 
+                    con consumir todos los recursos de su navegador.
+                </p>
+                <!-- endoc -->
+            </li>
+        </ol>
+        <br>
+
+        <p>
+            <strong>Las etiquetas HTML</strong> son fundamentales para la creación y organización del contenido web, variando en frecuencia de uso según las necesidades del proyecto.
+        </p>
+
+
+        
+        
+        <div class="history-card-wrapper" style="display: none;">
+            <!-- <div class="history-card-wrapper__img"></div> -->
+            
+            <img src="html/img/digital-kingdom.jpeg" alt="digital kingdom" class="">
+            <div class="history-card-wrapper__p">
+                <h3>Digi Kingdom</h3>
+                <p>Había una vez un joven programador llamado Sam, que vivía en un reino digital lleno de líneas de código y variables misteriosas. Un día, mientras depuraba su último proyecto, Sam se topó con un error inesperado: un bucle infinito que amenazaba con consumir todos los recursos de su navegador. Con su editor de código abierto y su consola lista para la batalla, Sam supo que no se trataba de un simple bug; era un desafío del legendario “Señor de los Errores”, que sólo podía ser derrotado entendiendo la lógica oculta detrás del código. Armado con su conocimiento de JavaScript y CSS, Sam comenzó a refactorizar su código, optimizando cada línea y trazando cuidadosamente cada variable hasta que, finalmente, el bucle fue controlado y el reino digital volvió a la normalidad. Así, Sam aprendió que cada error es una oportunidad para crecer y que, en el mundo de la programación, la persistencia es la clave para superar cualquier obstáculo.</p>
+            </div>
+        </div>
+        <!-- <div class="default-ltr-cache-1a6xlyy e1aaubb91">
+            <p>Había una vez un joven programador llamado Sam, que vivía en un reino digital lleno de líneas de código y variables misteriosas. Un día, mientras depuraba su último proyecto, Sam se topó con un error inesperado: un bucle infinito que amenazaba con consumir todos los recursos de su navegador. Con su editor de código abierto y su consola lista para la batalla, Sam supo que no se trataba de un simple bug; era un desafío del legendario “Señor de los Errores”, que sólo podía ser derrotado entendiendo la lógica oculta detrás del código. Armado con su conocimiento de JavaScript y CSS, Sam comenzó a refactorizar su código, optimizando cada línea y trazando cuidadosamente cada variable hasta que, finalmente, el bucle fue controlado y el reino digital volvió a la normalidad. Así, Sam aprendió que cada error es una oportunidad para crecer y que, en el mundo de la programación, la persistencia es la clave para superar cualquier obstáculo.</p>
+        </div> -->
+        <!-- <img src="html/img/digital-kingdom.jpeg" alt="digital kingdom" width="200" class="img-wrapper-difusion img-difuminada"> -->
+        <!-- <p>Había una vez un joven programador llamado Sam, que vivía en un reino digital lleno de líneas de código y variables misteriosas. Un día, mientras depuraba su último proyecto, Sam se topó con un error inesperado: un bucle infinito que amenazaba con consumir todos los recursos de su navegador. Con su editor de código abierto y su consola lista para la batalla, Sam supo que no se trataba de un simple bug; era un desafío del legendario “Señor de los Errores”, que sólo podía ser derrotado entendiendo la lógica oculta detrás del código. Armado con su conocimiento de JavaScript y CSS, Sam comenzó a refactorizar su código, optimizando cada línea y trazando cuidadosamente cada variable hasta que, finalmente, el bucle fue controlado y el reino digital volvió a la normalidad. Así, Sam aprendió que cada error es una oportunidad para crecer y que, en el mundo de la programación, la persistencia es la clave para superar cualquier obstáculo.</p> -->
+        
+    </section>
+</div>
+
+<!-- Contenedor del modal -->
+<div id="historyDigiKingdomModal" class="modal">
+    <!-- Contenido del modal -->
+    <div class="modal-content modal-content--large">
+        <div class="modal-header">
+            <div class="modal-title">
+                <span>Narrativa del cuento</span>
+            </div>
+            <div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <div class="history-card-wrapper">
+                <!-- <div class="history-card-wrapper__img"></div> -->
+                
+                <img src="html/img/digital-kingdom.jpeg" alt="digital kingdom" class="">
+                <div class="history-card-wrapper__p">
+                    <h3>Digi Kingdom</h3>
+                    <p>Había una vez un joven programador llamado Sam, que vivía en un reino digital lleno de líneas de código y variables misteriosas. Un día, mientras depuraba su último proyecto, Sam se topó con un error inesperado: un bucle infinito que amenazaba con consumir todos los recursos de su navegador. Con su editor de código abierto y su consola lista para la batalla, Sam supo que no se trataba de un simple bug; era un desafío del legendario “Señor de los Errores”, que sólo podía ser derrotado entendiendo la lógica oculta detrás del código. Armado con su conocimiento de JavaScript y CSS, Sam comenzó a refactorizar su código, optimizando cada línea y trazando cuidadosamente cada variable hasta que, finalmente, el bucle fue controlado y el reino digital volvió a la normalidad. Así, Sam aprendió que cada error es una oportunidad para crecer y que, en el mundo de la programación, la persistencia es la clave para superar cualquier obstáculo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
