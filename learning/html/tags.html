@@ -59,8 +59,10 @@
         position: absolute;
         inset: 0px;
         z-index: 2;
+        /* Para PC, Tablet */
         background: linear-gradient(40deg, rgb(22, 22, 22) 24.16%, rgba(6, 10, 23, 0) 56.61%), linear-gradient(0deg, rgb(22, 22, 22) 3.91%, rgba(6, 10, 23, 0) 69.26%);
-       
+        /* Para mobile */
+        /* background: linear-gradient(40deg, rgb(22, 22, 22) 24.16%, rgba(6, 10, 23, 0) 56.61%), linear-gradient(0deg, rgb(22, 22, 22) 50%, rgba(6, 10, 23, 0) 100%); */
     }
 
     .history-card-wrapper img {
@@ -105,6 +107,20 @@
         padding: 0;
         margin-bottom: 0;
         /* background-color: rgba(0, 0, 0, 0.575); */
+    }
+
+    /* Mobile - Estilos en pantallas pequeñas */
+    @media (max-width: 768px) {
+        .history-card-wrapper::after {
+            background: linear-gradient(40deg, rgb(22, 22, 22) 24.16%, rgba(6, 10, 23, 0) 56.61%), linear-gradient(0deg, rgb(22, 22, 22) 50%, rgba(6, 10, 23, 0) 100%);
+        }
+    }
+
+    /* Desktop - Cuando el usuario redusca el tamano de la ventana del navegador */
+    @media (min-width: 768px) {
+        .history-card-wrapper::after {
+            background: linear-gradient(40deg, rgb(22, 22, 22) 24.16%, rgba(6, 10, 23, 0) 56.61%), linear-gradient(0deg, rgb(22, 22, 22) 3.91%, rgba(6, 10, 23, 0) 69.26%);
+        }
     }
             
 </style>
