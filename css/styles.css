@@ -5,11 +5,10 @@
 @import "modal.css";
 @import "buttons.css";
 
-
-body {
+html {
+    font-size: 16px; /* Establece la base a 16px, esto hace que 1rem = 16px */
     font-family: roboto;
-    font-size: 16px;
-    letter-spacing: .031rem;
+    letter-spacing: .031rem; 
 }
 
 body, html {
@@ -44,7 +43,8 @@ p {
 }
 
 ol, ul { padding-inline-start: 20px; }
-
+ol ul { list-style-type: disc}
+ul li{ margin-block-start: 1rem; margin-block-end: 1rem;}
 
 .tag-wrapper {
     padding: 1px 3px;
@@ -57,6 +57,30 @@ ol, ul { padding-inline-start: 20px; }
     padding: 10px;
     background-color: #ffffff;
     border-bottom: 2px solid #858585;
+}
+
+h1 {
+    font-size: 22px; /* 32px */
+}
+
+h2 {
+    font-size: 20px; /* 24px */
+}
+
+h3 {
+    font-size: 18px; /* 18.72px */
+}
+
+h4 {
+    font-size: 16px; /* 16px */
+}
+
+h5 {
+    font-size: 14px; /* 13.28px */
+}
+
+h6 {
+    font-size: 12px; /* 10.72px */
 }
 
 

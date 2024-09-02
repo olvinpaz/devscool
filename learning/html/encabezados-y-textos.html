@@ -1,0 +1,125 @@
+<div class="sections">
+    <section class="section">
+        <h1 class="h-bg">Encabezados y Texto</h1>
+
+        <h2><code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code></h2>
+        <h3>Encabezados, usados para títulos y subtítulos en orden de importancia.</h3>
+        <p>Las etiquetas <code>&lt;h1&gt;</code> hasta <code>&lt;h6&gt;</code> en HTML se utilizan para definir encabezados, que son títulos o subtítulos dentro de una página web. Cada nivel de encabezado tiene un propósito específico, con <code>&lt;h1&gt;</code> siendo el más importante y <code>&lt;h6&gt;</code> el menos importante. Aquí tienes una explicación de cada uno:</p>
+
+        <h4>Niveles de Encabezados</h4>
+        <ol>
+            <li>
+                <strong>&lt;h1&gt; (Encabezado de Nivel 1):</strong>
+                <ul>
+                    <li>Es el encabezado principal de la página.</li>
+                    <li>Solo debe usarse una vez por página para definir el tema o el título principal del documento.</li>
+                    <li><p>Ejemplo: <code>&lt;h1&gt;</code>Bienvenidos a mi sitio web<code>&lt;/h1&gt;</code></p></li>
+                </ul>
+            </li>
+            
+            <li>
+                <strong>&lt;h2&gt; (Encabezado de Nivel 2):</strong>
+                <ul>
+                    <li><p>Se utiliza para secciones principales dentro de un documento, como capítulos o subsecciones del <code>&lt;h1&gt;</code></p></li>
+                    <li><p>Puedes tener múltiples <code>&lt;h2&gt;</code> uno para cada sección importante.</p></li>
+                    <li><p>Ejemplo: Dividir el artículo en secciones principales como "Introducción", "Estructura Básica", y "Avanzado".</p></li>
+                </ul>
+            </li>
+            
+            <li>
+                <strong>&lt;h3&gt; (Encabezado de Nivel 3):</strong>
+                <ul>
+                    <li><p>Usado para subsecciones dentro de un <code>&lt;h2&gt;</code></p></li>
+                    <li> <p>Puedes tener múltiples <code>&lt;h3&gt;</code> para dividir una sección en más detalle.</p></li>
+                    <li><p>Ejemplo: Dentro de la sección principal "Estructura Básica", podrías tener subsecciones como "Etiquetas HTML", "Atributos".</p></li>
+                </ul>
+            </li>
+            
+            <li>
+                <strong>&lt;h4&gt; (Encabezado de Nivel 4):</strong>
+                <ul>
+                    <li><p>Se usa para subdividir aún más los <code>&lt;h3&gt;</code>. Normalmente se usa cuando necesitas un nivel adicional de detalle.</p></li>
+                    <li><p>Ejemplo:  Dentro de de la sección "Etiquetas HTML", podrías tener "Etiquetas de Estructura", "Etiquetas de Formato".</li>
+                </ul>
+            </li>
+            
+            <li>
+                <strong>&lt;h5&gt; y &lt;h6&gt; (Encabezado de Nivel 5 y 6):</strong>
+                <ul>
+                    <li><p>Se usan para niveles adicionales de detalle bajo un <code>&lt;h4&gt;</code>. En la mayoría de los casos, solo se usan si se necesita una estructura muy detallada.</p></li>
+                    <li><p>Ejemplo: Dentro de "Meta Etiquetas", podrías tener secciones más específicas si es necesario.</p></li>
+                </ul>
+            </li>
+        </ol>
+
+        <h3>Importancia de los Encabezados</h3>
+        <ul>
+            <li><strong>Jerarquía:</strong> Ayudan a crear una estructura jerárquica y lógica del contenido, lo cual es importante tanto para los usuarios como para los motores de búsqueda (SEO).</li>
+            <li><strong>Accesibilidad:</strong> Mejoran la accesibilidad para lectores de pantalla, ya que permiten a los usuarios navegar por los títulos.</li>
+            <li><strong>Estilo Visual:</strong> Cada nivel de encabezado tiene un tamaño de fuente predeterminado diferente, pero se pueden estilizar con CSS.</li>
+        </ul>
+
+        <h3>Consideraciones</h3>
+        <ul>
+            <li><p><strong>No Exageres:</strong> <code>&lt;h1&gt;</code> debería usarse una sola vez por página. Solo usa los niveles que realmente necesites. No hay una regla estricta, pero un uso excesivo puede complicar la estructura.</p></li>
+            <li><p><strong>Mantén la Lógica:</strong> Asegúrate de que los encabezados sigan una estructura lógica y jerárquica. No saltes niveles innecesariamente (por ejemplo, de <code>&lt;h1&gt;</code> a <code>&lt;h4&gt;</code>).</p></li>
+            <li><strong>Usabilidad y Accesibilidad:</strong> Una buena estructura de encabezados mejora la navegación y la comprensión del contenido, tanto para los usuarios como para los motores de búsqueda.</li>
+        </ul>
+
+
+        <h3>Ejemplo código HTML:</h3>
+        <div id="headers" 
+            class="code-editor"
+            data-show-comments="false"
+            data-src="html/examples/encabezados-y-texto-example-code.html">
+        </div>
+        <br>
+
+        <h3>Explicación del Código</h3>
+        <ul>
+            <li><strong>&lt;h1&gt;</strong> es el título principal de la página, y generalmente solo debe usarse una vez.</li>
+            <li><strong>&lt;h2&gt; a &lt;h6&gt;</strong> se utilizan para crear subsecciones del contenido, siguiendo un orden jerárquico lógico.</li>
+        </ul>
+        <p>Este ejemplo muestra una estructura clara y ordenada, que es fácil de entender tanto para los humanos como para los motores de búsqueda.</p>
+
+        <h3>Resultado visible al usuario:</h3>
+        <div class="render-demo" style="outline: 4px solid #dedede; padding: 10px;">
+        <!-- XXXXXHeaders -->
+            <main>
+                <h1>Guía Completa de HTML</h1>
+    
+                <h2>Introducción</h2>
+                <p>En esta guía, aprenderás los fundamentos de HTML...</p>
+                
+                <h2>Estructura Básica</h2>
+                
+                <h3>Etiquetas HTML</h3>
+                <p>Las etiquetas HTML definen la estructura de las páginas web...</p>
+                
+                <h4>Etiquetas de Estructura</h4>
+                <p>Las etiquetas de estructura incluyen...</p>
+                
+                <h4>Etiquetas de Formato</h4>
+                <p>Las etiquetas de formato permiten...</p>
+                
+                <h3>Atributos</h3>
+                <p>Los atributos proporcionan información adicional...</p>
+                
+                <h2>Avanzado</h2>
+                <p>En la sección avanzada, exploraremos temas más complejos...</p>
+                
+                <h3>SEO y HTML</h3>
+                <p>Cómo usar HTML para mejorar el SEO de tu página...</p>
+                
+                <h4>Meta Etiquetas</h4>
+                <p>Las meta etiquetas se usan para...</p>
+                
+                <h5>Meta Descripción</h5>
+                <p>La meta descripción es importante porque...</p>
+            </main>
+        <!-- endoc -->
+        </div>
+
+        <p><strong>En resumen</strong>, usa los encabezados de acuerdo a la necesidad de estructurar el contenido de manera clara y lógica. La cantidad de niveles dependerá de la complejidad del contenido que estás presentando.</p>
+    </section>
+</div>
