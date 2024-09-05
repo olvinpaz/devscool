@@ -63,12 +63,78 @@ pre code.hljs {
 }
 
 ul li .code-editor,
-ol li .code-editor {
+ol li .code-editor,
+ul li .render-demo,
+ol li .render-demo {
     /* margin-left: -30px;
     margin-right: -10px; */
     margin-inline-start: -30px;
     margin-inline-end: -10px; 
 }
+
+
+
+
+
+
+
+
+/**
+ * Render Demo
+ * Contenedor donde se visualiza ó renderiza el código de ejemplo de una sección.
+ *
+ */
+.render-demo {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 7px;
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.render-demo__header {
+    padding: 7px 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    border-top-left-radius: 7px;
+    border-top-right-radius: 7px;
+    background-color: #dddddd;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.render-demo__body {
+    padding: 10px 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+.render-demo__footer {
+    padding: 4px 10px;
+    border-bottom-left-radius: 7px;
+    border-bottom-right-radius: 7px;
+    background-color: rgb(255, 255, 255);
+}
+
+.render-demo__footer p {
+ padding: 0;
+ margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* Mobile - Estilos en pantallas pequeñas */
@@ -92,7 +158,9 @@ ol li .code-editor {
     }
 
     ul li .code-editor,
-    ol li .code-editor {
+    ol li .code-editor,
+    ul li .render-demo,
+    ol li .render-demo {
         /* margin-left: -30px;
         margin-right: -10px; */
         margin-inline-start: 0px;

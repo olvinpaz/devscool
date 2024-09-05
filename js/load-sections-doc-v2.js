@@ -45,13 +45,16 @@ function codeEditorExtractor() {
         //const dataLang = element.dataset.lang;
         const dataLang = element.dataset.lang ? element.dataset.lang : element.dataset.src.split('.').pop();
     
+        // Title - Título de en la pestaña de code editor
+        const dataTitle = element.dataset.title ? element.dataset.title : element.dataset.title
+        console.log("Título:", dataTitle);
         // Comentarios en el código
         const dataShowComments = element.dataset ? element.dataset.showComments : true
     
         // Obtener el valor del atributo data-src del elemento
         const dataSrc = element.getAttribute('data-src');
             
-        fetchAndAppendSections(id, sectionName, dataShowComments, dataLang, dataSrc);
+        fetchAndAppendSections(id, sectionName, dataShowComments, dataLang, dataTitle, dataSrc);
     });
 }
 
@@ -66,7 +69,7 @@ function codeEditorExtractor() {
 * @param {string} lang Define el Lenguaje en se ha escrito el código para la documentación
  * @param {string} fileName ruta del archivo del que se desea extraer su contenido.
  */
-function fetchAndAppendSections(appendTargetID, sectionToExtract, showComments, lang, fileName) {
+function fetchAndAppendSections(appendTargetID, sectionToExtract, showComments, lang, title, fileName) {
     
     //const preElement = document.querySelector('pre code' + target); // Obtiene el elemento pre code
     
@@ -112,7 +115,10 @@ function fetchAndAppendSections(appendTargetID, sectionToExtract, showComments, 
 
             // Crear un elemento <div> con la clase "editor-tab"
             const editorTab = document.createElement('div');
-            const tabLabel = document.createTextNode(fileName); // Crear un nodo de texto
+            const label = title === 'src' ? fileName
+                        : title === 'file-name' ? fileName.split('/').pop() 
+                        : title || lang;
+            const tabLabel = document.createTextNode(label); // Crear un nodo de texto
             editorTab.classList.add('editor-tab');
 
             // Agregar el nodo de tabLabel como hijo del elemento editorTab
@@ -399,7 +405,7 @@ function filterComments (code, showComments) {
         filteredComments = filteredComments
             .split('\n')
             .filter(line => line.trim() !== 'Replaced Comment...')   // Elimina líneas vacías dejadas por la eliminacion del bloque de comentarios
-            .map(line => line.replace('Replaced Comment...', '')) // Reemplaza los comentarios inline al lado del una linea de código 
+            .map(line => line.replace('Replaced Comment...', '')) // Reemplaza los comentarios inline al lado de una linea de código 
             .join('\n');
 
         //console.log("Captured contents:", results);
