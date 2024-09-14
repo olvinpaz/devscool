@@ -56,7 +56,13 @@ function closeModal(modal) {
 // Añadir evento a los botones para abrir el modal correspondiente
 modalBtns.forEach(function(btn) {
   btn.onclick = function() {
-    var targetModal = document.querySelector(btn.getAttribute("data-modal-target"));
+    // Si el signo # esta presente en el selector
+    //var targetModal = document.querySelector(btn.getAttribute("data-modal-target"));
+    //openModal(targetModal);
+
+    // Añadir manualmente el signo # al selector si no está presente en el atributo
+    var targetSelector = btn.getAttribute("data-modal-target");
+    var targetModal = document.querySelector("#" + targetSelector); 
     openModal(targetModal);
   }
 });

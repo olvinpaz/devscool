@@ -91,13 +91,37 @@
             <li><p><strong>Anidamiento:</strong> No se recomienda anidar párrafos dentro de otros párrafos. Esto podría causar resultados inesperados y no es una práctica válida.</p></li>
             <li><p><strong>Uso de Texto y Otros Elementos:</strong> Puede contener texto, enlaces, imágenes en línea, elementos en negrita <code>&lt;strong&gt;</code> en cursiva <code>&lt;em&gt;</code>, entre otros, <strong>pero no debe contener</strong> otros elementos de bloque como otro <code>&lt;p&gt;</code>, <code>&lt;div&gt;</code>, <code>&lt;h1&gt;</code></p> etc.</li>
             <li>
-                <p><strong>Atributos Comunes:</strong></p>
+                <p><strong>Atributos Comunes:</strong> <button id="openModal" class="btn-more-info" data-modal-target="atributosModal" data-load-content="html/atributos.html">Atributos</button></p>
                 <ul>
                     <li><span class="tag-wrapper"><code>id</code></span> : Para identificar el párrafo de forma única dentro del documento.</li>
                     <li><span class="tag-wrapper"><code>class</code></span> : Para aplicar estilos CSS específicos.</li>
                     <li><span class="tag-wrapper"><code>style</code></span> : Para aplicar estilos en línea directamente al párrafo.</li>
                     <li><span class="tag-wrapper"><code>title</code></span> : Proporciona información adicional que aparece al pasar el cursor sobre el párrafo.</li>
                 </ul>
+                <div id="texto-parrafo-atributos" 
+                    class="code-editor" 
+                    data-show-comments="false" 
+                    data-title="" 
+                    data-src="html/texto-parrafo.html">
+                </div>
+
+                <div class="render-demo">
+                    <div class="render-demo__header">
+                        <div><strong>Resultado:</strong></div>
+                    </div>
+                    <div class="render-demo__body">
+                    <!-- Texto Parrafo atributos -->
+                    <p id="primer-p"
+                       class="p-magin-20" 
+                       style="font-size: 18px;"
+                       title="Ejemplo del atributo title">
+                        Este es un párrafo de texto.
+                    </p>
+                    <!-- endoc -->   
+                    </div>
+                    <div class="render-demo__footer">
+                    </div>
+                </div>
             </li>
             <li>
                 <p><strong>Estilos CSS Comunes:</strong> Puedes aplicar CSS para cambiar su apariencia:</p>
@@ -114,4 +138,23 @@
             </li>
         </ol>
     </section>
+</div>
+
+
+<!-- Contenedor del modal -->
+<div id="atributosModal" class="modal">
+    <!-- Contenido del modal -->
+    <div class="modal-content modal-content--large">
+        <div class="modal-header">
+            <div class="modal-title">
+                <h3>Atributos</h3>
+            </div>
+            <div>
+                <span class="close">&times;</span>
+            </div>
+        </div>
+        <div class="modal-body">
+            <!-- Aquí vá el contenido cargado desde otro archivo html -->
+        </div>
+    </div>
 </div>

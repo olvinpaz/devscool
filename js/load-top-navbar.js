@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     //xxxloadScript();
 
                     insertScriptInContent('../js/modal.js', section);
+                    insertScriptInContent('../js/load-content.js', section);
                    
                 } else {
                     console.error('No se encontró .section dentro del contenido cargado.');
